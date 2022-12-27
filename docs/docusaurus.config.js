@@ -1,17 +1,17 @@
-const repo = 'https://github.com/tintef/react-google-places-autocomplete';
+const repo = 'https://github.com/dylmye/mui-google-places-autocomplete';
 
 module.exports = {
-  title: 'React Google Places Autocomplete',
-  tagline: 'React component for easily use Google Places Autocomplete',
-  url: 'https://tintef.github.io/',
-  baseUrl: '/react-google-places-autocomplete/',
+  title: 'MUI Google Places Autocomplete',
+  tagline: 'React component for Google Places Autocomplete, using MUI',
+  url: 'https://dylmye.me/',
+  baseUrl: '/mui-google-places-autocomplete/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
-  organizationName: 'tintef', // Usually your GitHub org/user name.
-  projectName: 'react-google-places-autocomplete', // Usually your repo name.
+  organizationName: 'dylmye', // Usually your GitHub org/user name.
+  projectName: 'mui-google-places-autocomplete', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'React Google Places Autocomplete',
+      title: 'MUI Google Places Autocomplete',
       logo: {
         alt: 'Logo',
         src: 'img/logo.svg',
@@ -34,7 +34,7 @@ module.exports = {
       style: 'dark',
       links: [],
       copyright: `
-        Copyright © ${new Date().getFullYear()} React Google Places Autocomplete, Tintef
+        Copyright © ${new Date().getFullYear()} MUI Google Places Autocomplete, Dylan Myers. Based on work by Tintef.
         <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
       `,
     },
@@ -49,7 +49,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/tintef/react-google-places-autocomplete/edit/master/docs/',
+            'https://github.com/dylmye/mui-google-places-autocomplete/edit/master/docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

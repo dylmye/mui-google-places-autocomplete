@@ -1,11 +1,10 @@
 module.exports = {
   docs: {
-    'React Google Places Autocomplete': [
+    'MUI Google Places Autocomplete': [
       'basic-usage',
       'props',
       'exposed-methods',
       'examples',
-      'v2-to-v3',
     ],
     'Utility functions': [
       'geocode-by-place-id',
