@@ -9,6 +9,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'dylmye', // Usually your GitHub org/user name.
   projectName: 'mui-google-places-autocomplete', // Usually your repo name.
+  trailingSlash: false,
   themeConfig: {
     navbar: {
       title: 'MUI Google Places Autocomplete',
