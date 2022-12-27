@@ -1,5 +1,5 @@
 import { LoaderOptions } from '@googlemaps/js-api-loader';
-import { Props, OptionTypeBase } from 'react-select';
+import { AutocompleteProps } from '@mui/material';
 
 export type GooglePlacesAutocompleteHandle = {
   getSessionToken: () => google.maps.places.AutocompleteSessionToken | undefined;
@@ -20,13 +20,18 @@ export interface AutocompletionRequest {
   types?: string[];
 }
 
-export default interface GooglePlacesAutocompleteProps {
+export type PredictionOption = google.maps.places.AutocompletePrediction;
+
+export default interface GooglePlacesAutocompleteProps extends AutocompleteProps<PredictionOption, false, false, false> {
+  inputValue: string;
+  setInputValue: (newValue: string) => void;
+  setValue: (newValue: PredictionOption | null) => void;
   apiKey?: string;
   apiOptions?: Partial<LoaderOptions>;
   autocompletionRequest?: AutocompletionRequest;
   debounce?: number;
   minLengthAutocomplete?: number;
   onLoadFailed?: (error: Error) => void;
-  selectProps?: Props<OptionTypeBase>;
   withSessionToken?: boolean;
+  label?: string;
 }

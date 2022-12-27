@@ -13,7 +13,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "build",
+    "outDir": "lib",
     "sourceMap": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -22,7 +22,8 @@
   "include": ["src/**/*"],
   "exclude": [
     "node_modules",
-    "build",
-    "docs"
+    "lib",
+    "docs",
+    "rollup.config.js"
   ]
 }

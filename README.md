@@ -5,57 +5,79 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/react-google-places-autocomplete">
-    <img src="https://img.shields.io/npm/v/react-google-places-autocomplete.svg"/>
-    <img src="https://img.shields.io/npm/dm/react-google-places-autocomplete.svg"/>
+  <a href="https://www.npmjs.com/package/mui-google-places-autocomplete">
+    <img src="https://img.shields.io/npm/v/mui-google-places-autocomplete.svg"/>
+    <img src="https://img.shields.io/npm/dm/mui-google-places-autocomplete.svg"/>
   </a>
-  <a href="https://travis-ci.org/tintef/react-google-places-autocomplete">
+  <!-- <a href="https://travis-ci.org/tintef/react-google-places-autocomplete">
     <img src="https://www.travis-ci.com/Tintef/react-google-places-autocomplete.svg?branch=master" />
-  </a>
-  <a href="https://packagequality.com/#?package=react-google-places-autocomplete">
+  </a> -->
+  <!-- <a href="https://packagequality.com/#?package=react-google-places-autocomplete">
     <img src="https://npm.packagequality.com/shield/react-google-places-autocomplete.svg"/>
-  </a>
-  <a href="https://www.npmjs.com/package/react-google-places-autocomplete">
-    <img src="https://img.shields.io/npm/l/react-google-places-autocomplete.svg" alt="License">
+  </a> -->
+  <a href="https://www.npmjs.com/package/mui-google-places-autocomplete">
+    <img src="https://img.shields.io/npm/l/mui-google-places-autocomplete.svg" alt="License">
   </a>
 </p>
 
+# MUI Google Places Autocomplete
 
-# React Google Places Autocomplete
+React component for easily use Google Places Autocomplete, which uses the MUI [React Autocomplete component](https://mui.com/material-ui/react-autocomplete).
 
-React component for easily use Google Places Autocomplete
+A fork of [Nicolas Tinte's brilliant component](https://github.com/Tintef/react-google-places-autocomplete), which uses [react-select](https://react-select.com).
 
+This is currently pre-production - don't expect it to work right now.
 
 ## Getting started
 
 Install the latest version:
+
 ```sh
-npm install --save react-google-places-autocomplete
+npm install --save mui-google-places-autocomplete
   or
-yarn add react-google-places-autocomplete
+yarn add mui-google-places-autocomplete
 ```
 
-Use the component!
-```js
-import React from 'react';
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+Use the component:
+
+```jsx
+import React from "react";
+import GooglePlacesAutocomplete from "mui-google-places-autocomplete";
 
 const Component = () => (
   <div>
-    <GooglePlacesAutocomplete
-      apiKey="****"
-    />
+    <GooglePlacesAutocomplete apiKey="****" />
   </div>
 );
 
 export default Component;
 ```
 
-**Coming from v2? Check the [migration guide](https://tintef.github.io/react-google-places-autocomplete/docs/v2-to-v3)**
+Or with [Formik](https://formik.org/):
+
+```jsx
+import React from "react";
+import { Formik, Form, Field } from "formik";
+import { GooglePlacesAutocompleteField } from "mui-google-places-autocomplete";
+
+const MyForm = () => (
+  <Formik onSubmit={console.log}>
+    <Form>
+      <Field
+        name="location"
+        component={GooglePlacesAutocompleteField}
+        apiKey="****"
+      />
+    </Form>
+  </Formik>
+);
+
+export default MyForm;
+```
 
 ## Documentation
 
-[**Read The Docs**](https://tintef.github.io/react-google-places-autocomplete)
+[**Read The Docs**](https://dylmye.me/mui-google-places-autocomplete)
 
 ## How to contribute?
 
@@ -64,17 +86,15 @@ export default Component;
 3. Code 🤓
 4. Test your changes
 
-    For this, I like to use [yalc](https://github.com/whitecolor/yalc), as it allows to emulate the process of using npm/yarn.
+   For this, I like to use [yalc](https://github.com/whitecolor/yalc), as it allows to emulate the process of using npm/yarn.
 
-    1. Install [yalc](https://github.com/whitecolor/yalc)
-    2. Build project with `yarn build` or `npm run build`
-    3. Publish the package with yalc: `yalc publish`
-    4. Add the package to your test project `yalc add react-google-places-automocomplete`
-    5. If needed, to update the package on your test project: `yalc update react-google-places-autocomplete`
-
+   1. Install [yalc](https://github.com/whitecolor/yalc)
+   2. Build project with `yarn build` or `npm run build`
+   3. Publish the package with yalc: `yalc publish`
+   4. Add the package to your test project `yalc add mui-google-places-automocomplete`
+   5. If needed, to update the package on your test project: `yalc update mui-google-places-autocomplete`
 
 5. Submit a PR!
-
 
 <br />
 <br />

@@ -1,4 +1,4 @@
-import { LatLng } from '../GooglePlacesAutocomplete.types';
+import type { LatLng } from '../types';
 
 const getLatLng = (result: google.maps.GeocoderResult): Promise<LatLng> => (
   new Promise((resolve, reject) => {
