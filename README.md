@@ -6,17 +6,14 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@dylmye/mui-google-places-autocomplete">
-    <img src="https://img.shields.io/npm/v/@dylmye/mui-google-places-autocomplete.svg"/>
-    <img src="https://img.shields.io/npm/dm/@dylmye/mui-google-places-autocomplete.svg"/>
+    <img src="https://img.shields.io/npm/v/@dylmye/mui-google-places-autocomplete.svg?logo=npm"/>
+    <img src="https://img.shields.io/npm/dm/@dylmye/mui-google-places-autocomplete.svg?logo=npm"/>
   </a>
-  <!-- <a href="https://travis-ci.org/tintef/react-google-places-autocomplete">
-    <img src="https://www.travis-ci.com/Tintef/react-google-places-autocomplete.svg?branch=master" />
-  </a> -->
-  <!-- <a href="https://packagequality.com/#?package=react-google-places-autocomplete">
-    <img src="https://npm.packagequality.com/shield/react-google-places-autocomplete.svg"/>
-  </a> -->
+  <a href="https://github.com/dylmye/mui-google-places-autocomplete/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/dylmye/mui-google-places-autocomplete/publish-to-npm.yml?logo=github">
+  </a>
   <a href="https://www.npmjs.com/package/@dylmye/mui-google-places-autocomplete">
-    <img src="https://img.shields.io/npm/l/@dylmye/mui-google-places-autocomplete.svg" alt="License">
+    <img src="https://img.shields.io/npm/l/@dylmye/mui-google-places-autocomplete.svg?logo=npm">
   </a>
 </p>
 
@@ -26,7 +23,11 @@ React component for easily use Google Places Autocomplete, which uses the MUI [R
 
 A fork of [Nicolas Tinte's brilliant component](https://github.com/Tintef/react-google-places-autocomplete), which uses [react-select](https://react-select.com).
 
-This is currently pre-production - don't expect it to work right now.
+> **Warning**    
+> This is currently pre-production - don't expect it to work right now.
+
+<p align="center"><img width="413" alt="a screenshot showing the component in action." src="https://user-images.githubusercontent.com/7024578/209857174-317d4f60-e187-467e-bf20-3bb0bf6c4678.png"></p>
+
 
 ## Getting started
 
