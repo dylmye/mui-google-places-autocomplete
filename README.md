@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://dylmye.me/mui-google-places-autocomplete" target="_blank">
-    <img width="250"src="https://raw.githubusercontent.com/dylmye/mui-google-places-autocomplete/master/docs/static/img/logo.svg">
+    <img width="250"src="https://raw.githubusercontent.com/dylmye/mui-google-places-autocomplete/master/docs/static/img/logo.png">
   </a>
 </p>
 

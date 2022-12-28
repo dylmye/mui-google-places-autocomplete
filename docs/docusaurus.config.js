@@ -16,7 +16,7 @@ module.exports = {
       title: 'MUI Google Places Autocomplete',
       logo: {
         alt: 'Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {

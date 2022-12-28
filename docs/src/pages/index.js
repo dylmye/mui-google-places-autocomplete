@@ -8,12 +8,30 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Use</>,
+    title: 'Easy to Use',
     imageUrl: 'img/easy-to-use.svg',
     description: (
       <>
-        React Google Places Autocomplete was designed to be easily installed and
+        MUI Google Places Autocomplete was designed to be easily installed and
         used to get your website up and running quickly.
+      </>
+    ),
+  },
+  {
+    title: 'Formik support out of the box',
+    imageUrl: 'img/checklist.png',
+    description: (
+      <>
+        Add Google Places Autocomplete functionality to your <a href="https://formik.org/">Formik</a> form with ease.
+      </>
+    ),
+  },
+  {
+    title: 'Built with Material UI 5',
+    imageUrl: 'img/diamond-qc.png',
+    description: (
+      <>
+        Based on the MUI Core <a href="https://mui.com/material-ui/react-autocomplete/">Autocomplete component</a>, with few other dependencies.
       </>
     ),
   },

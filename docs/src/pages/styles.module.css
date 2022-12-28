@@ -33,7 +33,7 @@
 
 .featureImage {
   height: 150px;
-  width: 150px;
+  width: auto;
   padding: 25px 0;
 }
 
