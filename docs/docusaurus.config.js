@@ -50,6 +50,7 @@ module.exports = {
           editUrl:
             'https://github.com/dylmye/mui-google-places-autocomplete/edit/master/docs/',
         },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
