@@ -41,12 +41,13 @@ There's two ways to load the API:
 
 #### Method 1: Separate script
 
+Loading the script in your static template or at the root component is great if you need your component straight away or if you are using Map APIs outside of the component.
+
 First, generate an `apiKey` in order to use it to load [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/). Then, use it to load it in your HTML file, adding a script tag:
 
 ```html
 <!-- public/index.html -->
-<script
-  type="text/javascript"
+<script 
   src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"
 />
 ```
@@ -84,17 +85,17 @@ import GooglePlacesAutocomplete from "@dylmye/mui-google-places-autocomplete";
 
 const Component = () => (
   <div>
-    <GooglePlacesAutocomplete apiKey="YOUR_GOOGLE_API_KEY" /> // Your API key
+    <GooglePlacesAutocomplete apiKey="YOUR_GOOGLE_API_KEY" />
     here if you're using Method 2
   </div>
 );
 ```
 
-All the props are detailed in the [API Reference](/docs/props).
+All the props are detailed in the [API Reference](/docs/props). Some methods are also exposed through the component's [imperative ref](https://beta.reactjs.org/reference/react/useImperativeHandle#exposing-your-own-imperative-methods), these methods are also documented on that page.
 
 ### Save the selected result
 
-You can use a state management solution like Redux, but here we're using a simple `useState`.
+You can use a state management solution like Redux, but to keep it simple we're using a simple `useState`.
 
 ```jsx
 import React, { useState } from 'react';

@@ -4,128 +4,138 @@ title: Props
 sidebar_label: Props
 ---
 
-```tsx
-interface GooglePlacesAutocompleteProps {
-  apiKey?: string;                               // default: ''
-  apiOptions?: ApiOptions;                       // default: { }
-  autocompletionRequest?: AutocompletionRequest; // default: { }
-  debounce?: number;                             // default: 300
-  minLengthAutocomplete?: number;                // default: 0
-  onLoadFailed?: (error: Error) => void;         // default: console.error
-  selectProps?: SelectProps;                     // default: { }
-  withSessionToken?: boolean;                    // default: false
-}
-```
-
-Where `SelectProps` are the ones accepted by [react-select](https://react-select.com/props).
-
-
-## `apiKey`
-
-If this parameter is passed, the component will inject the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/) usign this `apiKey`. So there's no need to manually add the `script` tag to yout HTML document.
-
-
-## `apiOptions`
-
-Object to configure the google script to inject. Let's see the shape this prop can take:
-
-```tsx
-export interface ApiOptions {
-  language?: string;
-  region?: string;
-}
-```
-
-Here's an example on how to use it:
+## `GooglePlacesAutocomplete`
 
 ```jsx
 <GooglePlacesAutocomplete
-  apiKey="***************"
-  apiOptions={{ language: 'fr', region: 'fr' }}
+  inputValue=""
+  setInputValue={(newValue) => setNewValue(newValue)}
+  value={selectedOption}
+  setValue={(newOption) => setSelectedOption(newOption)}
+  apiKey=""
+  apiOptions={{ language: 'fr' }}
+  debounce={300}
+  minLengthAutocomplete={0}
+  onLoadFailed={(error) => console.error(error)}
+  withSessionToken={false}
+  label="Search Places"
 />
 ```
 
-**Note:** for more information check [localization documentation](https://developers.google.com/maps/documentation/javascript/localization).
+### `inputValue`
 
+Controlled value that is shown in the text box.
 
-## `autocompletionRequest`
+* Required: **yes**
+* Type: `string`
 
-Autocompletion request object to add restrictions to the search. Let's see the shape this prop can take:
+### `setInputValue`
 
-```tsx
-interface LatLng {
-  lat: number;
-  lng: number;
-}
+This method is called when a new option is selected from the search results, and contains the new value to set `inputValue` to.
 
-interface AutocompletionRequest {
-  bounds?: [LatLng, LatLng];
-  componentRestrictions?: { country: string | string[] };
-  location?: LatLng;
-  offset?: number;
-  radius?: number;
-  types?: string[];
-}
-```
+* Required: **yes**
+* Type: `(newInputValue: string) => void`
 
-Here's an example on how to use it:
+### `value`
 
-```jsx
-<GooglePlacesAutocomplete
-  autocompletionRequest={{
-    bounds: [
-      { lat: 50, lng: 50 },
-      { lat: 100, lng: 100 }
-    ],
-    componentRestrictions: {
-    country: ['us', 'ca', 'uy'],
-    }
-  }}
-/>
-```
+The controlled raw value of the currently selected option. You can optionally use this to grab extra details about the selected option.
 
-**Note:** for more information check [google documentation](https://developers.google.com/maps/documentation/javascript/reference/places-autocomplete-service#AutocompletionRequest).
+* Required: no
+* Type: `PredictionOption | null`
 
+### `setValue`
 
-## `debounce`
+This method is called when a new option is selected from the search results, and contains the new value to set `value` to.
 
-The number of milliseconds to delay before making a call to Google Maps API.
+* Required: no
+* Type: `(newValue: PredictionOption | null) => void`
 
+### `apiKey`
 
-## `minLengthAutocomplete`
+If this parameter is passed, the component will inject the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/) using this `apiKey`. So there's no need to manually add the `script` tag to your HTML document.
+
+* Required: no
+* Type: `string`
+
+### `apiOptions`
+
+Pass any extra options to the API loader. Only takes effect if `apiKey` is passed in. All options are defined [here](https://github.com/googlemaps/js-api-loader/blob/947b17b4d5bcedb56757c9c866e34b9c17c01c11/src/index.ts#L46). For example, you can use this object to [customise the localisation](https://developers.google.com/maps/documentation/javascript/localization).
+
+* Required: no
+* Type: `LoaderOptions`
+
+### `autocompletionRequest`
+
+Add restrictions to the request made when fetching options. All options are defined [here](https://developers.google.com/maps/documentation/javascript/reference/places-autocomplete-service#AutocompletionRequest). You may use this to filter results to a country, or even to a radius of a location or within given bounds.
+
+* Required: no
+* Type: `google.maps.places.AutocompletionRequest`
+
+### `debounce`
+
+The number of milliseconds to delay before making a call to Google Maps API. This prevents the API being called for every keystroke, which could save you from hitting your quota quick.
+
+* Required: no
+* Default: 300
+* Type: `number`
+
+### `minLengthAutocomplete`
 
 Defines a minimum number of characters needed on the input in order to make requests to the Google's API.
 
+* Required: no
+* Default: 0
+* Type: `number`
 
-## `onLoadFailed`
+### `onLoadFailed`
 
-Function to be called when the injection of the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/) fails due to network error.
+Function to be called when the injection of the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/) fails due to a network error, for example.
 
-For example:
-```jsx
-<GooglePlacesAutocomplete
-  onLoadFailed={(error) => (
-    console.error("Could not inject Google script", error)
-  )}
-/>
-```
+* Required: no
+* Type: `(error: Error) => void`
 
-## `selectProps`
-
-As this component uses [react-select](https://react-select.com) under the hood, this prop accepts everything that's accepted by it. You can check [react-select props here](https://react-select.com/props).
-
-For example, a really common use would be to use it as a controlled input:
-```jsx
-const [value, setValue] = useState(null);
-
-<GooglePlacesAutocomplete
-  selectProps={{
-    value,
-    onChange: setValue,
-  }}
-/>
-```
-
-## `withSessionToken`
+### `withSessionToken`
 
 If this prop is set to `true`, the component will handle changing the `sessionToken` on every session. To learn more about how this works refer to [Google Places Session Token docs](https://developers.google.com/places/web-service/session-tokens).
+
+* Required: no
+* Default: `false`
+* Type: `boolean`
+
+## `GooglePlacesAutocomplete#ref`
+
+You can retrieve the below methods by creating a ref on the component, using [`useRef`](https://beta.reactjs.org/reference/react/useRef). They will live on the `current` property of the ref.
+
+```ts
+{
+  getSessionToken: () => AutocompleteSessionToken | undefined;
+  refreshSessionToken: () => void;
+}
+```
+
+### `getSessionToken`
+
+Retrieve the current `AutocompleteSessionToken`.
+
+### `refreshSessionToken`
+
+Force update the `AutocompleteSessionToken`.
+
+## `GooglePlacesAutocompleteField`
+
+```jsx
+<Field
+  component={GooglePlacesAutocompleteField}
+  value={selectedOption}
+  setValue={(newOption) => setSelectedOption(newOption)}
+  apiKey=""
+  apiOptions={{ language: 'fr' }}
+  debounce={300}
+  minLengthAutocomplete={0}
+  onLoadFailed={(error) => console.error(error)}
+  withSessionToken={false}
+  label="Search Places"
+/>
+```
+
+The props are the same as `GooglePlacesAutocomplete`, other than `inputValue` and `setInputValue` being excluded. [Formik Field props](https://formik.org/docs/api/field) are also available.
