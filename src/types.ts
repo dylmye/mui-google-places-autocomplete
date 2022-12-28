@@ -1,8 +1,11 @@
-import { LoaderOptions } from '@googlemaps/js-api-loader';
-import { AutocompleteProps } from '@mui/material';
+import { LoaderOptions } from "@googlemaps/js-api-loader";
+import { AutocompleteProps } from "@mui/material";
+import { FieldProps } from "formik";
 
-export type GooglePlacesAutocompleteHandle = {
-  getSessionToken: () => google.maps.places.AutocompleteSessionToken | undefined;
+export interface GooglePlacesAutocompleteHandle {
+  getSessionToken: () =>
+    | google.maps.places.AutocompleteSessionToken
+    | undefined;
   refreshSessionToken: () => void;
 }
 
@@ -22,10 +25,15 @@ export interface AutocompletionRequest {
 
 export type PredictionOption = google.maps.places.AutocompletePrediction;
 
-export default interface GooglePlacesAutocompleteProps extends AutocompleteProps<PredictionOption, false, false, false> {
+export default interface GooglePlacesAutocompleteProps
+  extends Omit<
+    AutocompleteProps<PredictionOption, false, false, false>,
+    "ref"
+  > {
   inputValue: string;
   setInputValue: (newValue: string) => void;
-  setValue: (newValue: PredictionOption | null) => void;
+  value?: PredictionOption;
+  setValue?: (newValue: PredictionOption | null) => void;
   apiKey?: string;
   apiOptions?: Partial<LoaderOptions>;
   autocompletionRequest?: AutocompletionRequest;
@@ -33,5 +41,11 @@ export default interface GooglePlacesAutocompleteProps extends AutocompleteProps
   minLengthAutocomplete?: number;
   onLoadFailed?: (error: Error) => void;
   withSessionToken?: boolean;
+  label?: string;
+}
+
+export interface GooglePlacesAutocompleteFieldProps
+  extends FieldProps<string>,
+    GooglePlacesAutocompleteProps {
   label?: string;
 }

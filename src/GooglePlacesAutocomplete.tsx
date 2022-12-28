@@ -50,6 +50,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
     google.maps.places.AutocompleteSessionToken | undefined
   >(undefined);
   const [options, setOptions] = useState<PredictionOption[]>([]);
+  const [internalSelectedOption, setInternalSelectedOption] = useState<PredictionOption | null>();
   const [fetchSuggestions] = useDebouncedCallback(
     (value: string, cb: (results: PredictionOption[]) => void): void => {
       if (!placesService) return cb([]);
@@ -73,7 +74,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
     debounce
   );
 
-  const initializeService = () => {
+  const initializeService = (): void => {
     if (!window.google)
       throw new Error(
         "[mui-google-places-autocomplete]: Google script not loaded"
@@ -96,7 +97,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
     newValue: PredictionOption | null
   ): void => {
     newValue && setOptions([newValue, ...options]);
-    setValue(newValue);
+    setValue ? setValue(newValue) : setInternalSelectedOption(newValue);
   };
 
   const onInputValueChange = (
@@ -113,7 +114,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
   const renderAutocompleteOption = (
     props: React.HTMLAttributes<HTMLLIElement>,
     option: PredictionOption
-  ) => {
+  ): JSX.Element => {
     const parts = [{ text: option.structured_formatting.main_text }];
     // const matches =
     //       option.structured_formatting.main_text_matched_substrings || [];
@@ -197,7 +198,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
       onInputChange={onInputValueChange}
       {...autocompleteProps}
       options={options}
-      value={value}
+      value={value ?? internalSelectedOption}
       renderInput={renderInputField}
       renderOption={renderAutocompleteOption}
     />
