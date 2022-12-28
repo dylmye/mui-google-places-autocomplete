@@ -36,7 +36,7 @@ module.exports = {
       style: 'dark',
       links: [],
       copyright: `
-        Copyright © ${new Date().getFullYear()} MUI Google Places Autocomplete, Dylan Myers. Based on work by Tintef.
+        Copyright © ${new Date().getFullYear()} MUI Google Places Autocomplete, Dylan Myers. Based on work by <a href="https://github.com/Tintef">Tintef</a>.
         <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
       `,
     },
