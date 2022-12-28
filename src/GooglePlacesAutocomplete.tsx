@@ -146,6 +146,8 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
     );
   };
 
+  const getOptionLabel = (option: PredictionOption | string): string => typeof option === "string" ? option : option.description;
+
   useImperativeHandle(
     ref,
     () => ({
@@ -201,6 +203,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
       value={value ?? internalSelectedOption}
       renderInput={renderInputField}
       renderOption={renderAutocompleteOption}
+      getOptionLabel={getOptionLabel}
     />
   );
 };
