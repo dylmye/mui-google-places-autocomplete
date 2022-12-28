@@ -5,7 +5,8 @@ module.exports = {
   tagline: 'React component for Google Places Autocomplete, using MUI',
   url: 'https://dylmye.me/',
   baseUrl: '/mui-google-places-autocomplete/',
-  onBrokenLinks: 'throw',
+  // onBrokenLinks: 'throw',
+  onBrokenLinks: 'log',
   favicon: 'img/favicon.ico',
   organizationName: 'dylmye', // Usually your GitHub org/user name.
   projectName: 'mui-google-places-autocomplete', // Usually your repo name.
