@@ -36,6 +36,7 @@ jobs:
   create_release:
     runs-on: ubuntu-latest
     name: Create GitHub release
+    needs: build_and_publish
 
     steps:
       - name: Checkout
