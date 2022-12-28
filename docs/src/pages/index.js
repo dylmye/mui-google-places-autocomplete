@@ -61,7 +61,7 @@ function Home() {
             <span>
               <iframe
                 className={styles.ghStars}
-                src="https://ghbtns.com/github-btn.html?user=tintef&amp;repo=react-google-places-autocomplete&amp;type=star&amp;count=true&amp;size=large"
+                src="https://ghbtns.com/github-btn.html?user=dylmye&amp;repo=mui-google-places-autocomplete&amp;type=star&amp;count=true&amp;size=large"
                 width={160}
                 height={30}
                 title="GitHub Stars"

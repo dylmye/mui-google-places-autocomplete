@@ -10,7 +10,6 @@ module.exports = {
   organizationName: 'dylmye', // Usually your GitHub org/user name.
   projectName: 'mui-google-places-autocomplete', // Usually your repo name.
   trailingSlash: false,
-  onBrokenLinks: 'log',
   themeConfig: {
     navbar: {
       title: 'MUI Google Places Autocomplete',
