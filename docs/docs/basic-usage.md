@@ -90,7 +90,7 @@ const Component = () => (
 );
 ```
 
-All the props are detailed in the [API Reference](/props).
+All the props are detailed in the [API Reference](/docs/props).
 
 ### Save the selected result
 
