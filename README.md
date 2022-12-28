@@ -1,13 +1,13 @@
 <p align="center">
-  <a href="https://tintef.github.io/react-google-places-autocomplete" target="_blank">
-    <img width="250"src="https://raw.githubusercontent.com/tintef/react-google-places-autocomplete/master/docs/static/img/logo.svg">
+  <a href="https://dylmye.me/mui-google-places-autocomplete" target="_blank">
+    <img width="250"src="https://raw.githubusercontent.com/dylmye/mui-google-places-autocomplete/master/docs/static/img/logo.svg">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/mui-google-places-autocomplete">
-    <img src="https://img.shields.io/npm/v/mui-google-places-autocomplete.svg"/>
-    <img src="https://img.shields.io/npm/dm/mui-google-places-autocomplete.svg"/>
+  <a href="https://www.npmjs.com/package/@dylmye/mui-google-places-autocomplete">
+    <img src="https://img.shields.io/npm/v/@dylmye/mui-google-places-autocomplete.svg"/>
+    <img src="https://img.shields.io/npm/dm/@dylmye/mui-google-places-autocomplete.svg"/>
   </a>
   <!-- <a href="https://travis-ci.org/tintef/react-google-places-autocomplete">
     <img src="https://www.travis-ci.com/Tintef/react-google-places-autocomplete.svg?branch=master" />
@@ -15,8 +15,8 @@
   <!-- <a href="https://packagequality.com/#?package=react-google-places-autocomplete">
     <img src="https://npm.packagequality.com/shield/react-google-places-autocomplete.svg"/>
   </a> -->
-  <a href="https://www.npmjs.com/package/mui-google-places-autocomplete">
-    <img src="https://img.shields.io/npm/l/mui-google-places-autocomplete.svg" alt="License">
+  <a href="https://www.npmjs.com/package/@dylmye/mui-google-places-autocomplete">
+    <img src="https://img.shields.io/npm/l/@dylmye/mui-google-places-autocomplete.svg" alt="License">
   </a>
 </p>
 
@@ -42,7 +42,7 @@ Use the component:
 
 ```jsx
 import React from "react";
-import GooglePlacesAutocomplete from "mui-google-places-autocomplete";
+import GooglePlacesAutocomplete from "@dylmye/mui-google-places-autocomplete";
 
 const Component = () => (
   <div>
@@ -58,7 +58,7 @@ Or with [Formik](https://formik.org/):
 ```jsx
 import React from "react";
 import { Formik, Form, Field } from "formik";
-import { GooglePlacesAutocompleteField } from "mui-google-places-autocomplete";
+import { GooglePlacesAutocompleteField } from "@dylmye/mui-google-places-autocomplete";
 
 const MyForm = () => (
   <Formik onSubmit={console.log}>
