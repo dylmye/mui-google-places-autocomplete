@@ -32,7 +32,7 @@ export default interface GooglePlacesAutocompleteProps
   > {
   inputValue: string;
   setInputValue: (newValue: string) => void;
-  value?: PredictionOption;
+  value?: PredictionOption | null;
   setValue?: (newValue: PredictionOption | null) => void;
   apiKey?: string;
   apiOptions?: Partial<LoaderOptions>;

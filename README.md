@@ -92,8 +92,8 @@ export default MyForm;
    1. Install [yalc](https://github.com/whitecolor/yalc)
    2. Build project with `yarn build` or `npm run build`
    3. Publish the package with yalc: `yalc publish`
-   4. Add the package to your test project `yalc add mui-google-places-automocomplete`
-   5. If needed, to update the package on your test project: `yalc update mui-google-places-autocomplete`
+   4. Add the package to your test project `yalc add @dylmye/mui-google-places-autocomplete`
+   5. If needed, to update the package on your test project: `yalc update @dylmye/mui-google-places-autocomplete`
 
 5. Submit a PR!
 

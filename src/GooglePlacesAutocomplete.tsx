@@ -148,6 +148,8 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
 
   const getOptionLabel = (option: PredictionOption | string): string => typeof option === "string" ? option : option.description;
 
+  const shallowCheckOptionEquality = (option: PredictionOption, value: PredictionOption | null): boolean => !!value && option.description === value?.description;
+
   useImperativeHandle(
     ref,
     () => ({
@@ -204,6 +206,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
       renderInput={renderInputField}
       renderOption={renderAutocompleteOption}
       getOptionLabel={getOptionLabel}
+      isOptionEqualToValue={shallowCheckOptionEquality}
     />
   );
 };
