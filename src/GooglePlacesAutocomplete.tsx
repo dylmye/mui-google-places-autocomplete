@@ -39,6 +39,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
     onLoadFailed = console.error,
     withSessionToken = false,
     label,
+    inputProps = {},
     ...autocompleteProps
   }: GooglePlacesAutocompleteProps,
   ref
@@ -109,7 +110,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
 
   const renderInputField = (
     props: AutocompleteRenderInputParams
-  ): JSX.Element => <TextField {...props} label={label} fullWidth />;
+  ): JSX.Element => <TextField {...props} {...inputProps} label={label} fullWidth />;
 
   const renderAutocompleteOption = (
     props: React.HTMLAttributes<HTMLLIElement>,

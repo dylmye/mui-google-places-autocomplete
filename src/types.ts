@@ -1,5 +1,5 @@
 import { LoaderOptions } from "@googlemaps/js-api-loader";
-import { AutocompleteProps } from "@mui/material";
+import { AutocompleteProps, TextFieldProps } from "@mui/material";
 import { FieldProps } from "formik";
 
 export interface GooglePlacesAutocompleteHandle {
@@ -42,6 +42,7 @@ export default interface GooglePlacesAutocompleteProps
   onLoadFailed?: (error: Error) => void;
   withSessionToken?: boolean;
   label?: string;
+  inputProps?: TextFieldProps;
 }
 
 export interface GooglePlacesAutocompleteFieldProps

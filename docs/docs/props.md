@@ -19,6 +19,9 @@ sidebar_label: Props
   onLoadFailed={(error) => console.error(error)}
   withSessionToken={false}
   label="Search Places"
+  inputProps={{
+    fullWidth: true,
+  }}
 />
 ```
 
@@ -101,6 +104,22 @@ If this prop is set to `true`, the component will handle changing the `sessionTo
 * Required: no
 * Default: `false`
 * Type: `boolean`
+
+### `label`
+
+The text to display in the placeholder/above the field.
+
+* Required: no
+* Default: empty string
+* Type: `string`
+
+### `inputProps`
+
+Any props to pass to the TextField.
+
+* Required: no
+* Default: `{}`
+* Type: `TextFieldProps`
 
 ## `GooglePlacesAutocomplete#ref`
 
