@@ -10,7 +10,7 @@ import type {
 /** The Google Places Autocomplete component you know and love, but connected up to Formik. The field value will be the string of the selected item. */
 const GooglePlacesAutocompleteField = ({
   field,
-  form: { setFieldValue },
+  form: { setFieldValue, isSubmitting },
   ...autoCompleteProps
 }: Omit<
   GooglePlacesAutocompleteFieldProps,
@@ -25,6 +25,7 @@ const GooglePlacesAutocompleteField = ({
       setInputValue={(newValue) => setFieldValue(field.name, newValue)}
       value={selectedOption}
       setValue={setSelected}
+      disabled={isSubmitting}
       {...autoCompleteProps}
     />
   );

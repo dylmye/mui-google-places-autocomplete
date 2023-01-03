@@ -51,11 +51,12 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
     google.maps.places.AutocompleteSessionToken | undefined
   >(undefined);
   const [options, setOptions] = useState<PredictionOption[]>([]);
+  const [loading, setLoading] = useState(false);
   const [internalSelectedOption, setInternalSelectedOption] = useState<PredictionOption | null>();
   const [fetchSuggestions] = useDebouncedCallback(
     (value: string, cb: (results: PredictionOption[]) => void): void => {
-      if (!placesService) return cb([]);
-      if (value.length < minLengthAutocomplete) return cb([]);
+      if (!placesService || value.length < minLengthAutocomplete) return cb([]);
+      setLoading(true);
 
       const autocompletionReq: AutocompletionRequest = {
         ...autocompletionRequest,
@@ -69,6 +70,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
         ),
         (suggestions) => {
           cb(suggestions || []);
+          setLoading(false);
         }
       );
     },
@@ -201,6 +203,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
       noOptionsText="Nothing found"
       onChange={onSelectedOptionChange}
       onInputChange={onInputValueChange}
+      loading={loading}
       {...autocompleteProps}
       options={options}
       value={value ?? internalSelectedOption}
