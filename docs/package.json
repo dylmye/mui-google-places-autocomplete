@@ -32,5 +32,9 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.0.0-alpha.51"
+  },
+  "resolutions": {
+    "trim": "^0.0.3",
+    "got": "^11.8.5"
   }
 }
