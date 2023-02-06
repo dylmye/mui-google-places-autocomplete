@@ -13,38 +13,32 @@ sidebar_label: Examples
 
 ## Controlled input
 
-```jsx
-const [value, setValue] = useState(null);
+You can store the selected value and the text used to search/show the selected option:
+
+```tsx
+// this is the text shown in the search box (the search or the selected option)
+const [value, setValue] = useState<string | null>(null);
+// this is the currently selected option
+const [selected, setSelected] = useState<PredictionOption | null>(null);
 
 <GooglePlacesAutocomplete
-  selectProps={{
-    value,
-    onChange: setValue,
-  }}
+  inputValue={value}
+  setInputValue={setValue}
+  value={selected}
+  setValue={setSelected}
 />
 ```
 
-## Customization
+## Formik Usage
 
-In order to customize the input and suggestions list, we need to use the `styles` property of [react-select](https://react-select.com/styles).
+Formik's `Field` component is supported out of the box, including disabling when submitting and setting the field properly:
 
-```jsx
-<GooglePlacesAutocomplete
-  selectProps={{
-    styles: {
-      input: (provided) => ({
-        ...provided,
-        color: 'blue',
-      }),
-      option: (provided) => ({
-        ...provided,
-        color: 'blue',
-      }),
-      singleValue: (provided) => ({
-        ...provided,
-        color: 'blue',
-      }),
-    },
-  }}
+```tsx
+<Field
+  component={GooglePlacesAutocompleteField}
+  name="location"
+  label="Enter your location"
 />
 ```
+
+The value of the field is the inputValue, so whatever is currently entered in the box. You can override any of the props for `GooglePlacesAutocomplete` by adding them to the `Field`'s props.

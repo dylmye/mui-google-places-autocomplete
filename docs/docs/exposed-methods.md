@@ -5,35 +5,33 @@ sidebar_label: Exposed Methods
 ---
 
 ```tsx
-type GooglePlacesAutocompleteHandle = {
-  getSessionToken: () => google.maps.places.AutocompleteSessionToken | undefined,
-  refreshSessionToken: () => void,
+interface GooglePlacesAutocompleteHandle {
+  getSessionToken: () => google.maps.places.AutocompleteSessionToken | undefined;
+  refreshSessionToken: () => void;
 }
 ```
 
 ## Usage
 
-In order to access the exposed methods you need to create a ref to the component:
+In order to access the exposed methods you need to create a ref to the component, like so:
 
-```js
+```tsx
 import React, { useRef } from 'react';
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+import GooglePlacesAutocomplete, { GooglePlacesAutocompleteHandle } from '@dylmye/mui-google-places-autocomplete';
 
 const Component = () => {
-  const rgpa = useRef(null);
+  const autocompleteRef = useRef<GooglePlacesAutocompleteHandle>(null);
   const refresh = () => {
-    if (rgpa && rgpa.current) {
-      rgpa.current.refreshSessionToken();
+    // check the ref is set before calling anything on it!
+    if (autocompleteRef?.current) {
+      autocompleteRef.current.refreshSessionToken();
     }
   }
 
   return (
     <div>
-      <GooglePlacesAutocomplete ref={useRef} />
-      <button
-        ref={rgpa}
-        onClick={refresh}
-      >
+      <GooglePlacesAutocomplete ref={autocompleteRef} />
+      <button onClick={refresh}>
         Refresh session token
       </button>
     </div>
@@ -50,7 +48,7 @@ This function retrieves the current `sessionToken` being used.
 
 ## `refreshSessionToken`
 
-This function allows you to refresh the `sessionToken` being used.
+This function allows you to refresh the `sessionToken`.
 
 
-**Note:** the componente does not refresh the `sessionToken`, so you will need to handle that yourself.
+> **Note:** the component does not refresh the `sessionToken`, so you will need to handle that yourself.
