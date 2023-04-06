@@ -52,7 +52,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<
   >(undefined);
   const [options, setOptions] = useState<PredictionOption[]>([]);
   const [loading, setLoading] = useState(false);
-  const [internalSelectedOption, setInternalSelectedOption] = useState<PredictionOption | null>();
+  const [internalSelectedOption, setInternalSelectedOption] = useState<PredictionOption | null>(null);
   const [fetchSuggestions] = useDebouncedCallback(
     (value: string, cb: (results: PredictionOption[]) => void): void => {
       if (!placesService || value.length < minLengthAutocomplete) return cb([]);

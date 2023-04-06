@@ -7,3 +7,4 @@ build-utils
 rollup.config.js
 tsconfig.json
 .yalc
+examples

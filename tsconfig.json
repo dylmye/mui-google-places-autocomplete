@@ -24,6 +24,7 @@
     "node_modules",
     "lib",
     "docs",
-    "rollup.config.js"
+    "rollup.config.js",
+    "examples"
   ]
 }

@@ -17,13 +17,13 @@ const GooglePlacesAutocompleteField = ({
   "inputValue" | "setInputValue"
 >): JSX.Element => {
   const [selectedOption, setSelected] = useState<
-    PredictionOption | null | undefined
+    PredictionOption | null
   >(field?.value ? buildPlaceholderOption(field.value) : null);
   return (
     <GooglePlacesAutocomplete
       inputValue={field.value}
       setInputValue={(newValue) => setFieldValue(field.name, newValue)}
-      value={selectedOption}
+      value={selectedOption ?? null}
       setValue={setSelected}
       disabled={isSubmitting}
       {...autoCompleteProps}
