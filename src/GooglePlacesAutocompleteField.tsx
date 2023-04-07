@@ -24,7 +24,7 @@ const GooglePlacesAutocompleteField = ({
       inputValue={field.value}
       setInputValue={(newValue) => setFieldValue(field.name, newValue)}
       value={selectedOption ?? null}
-      setValue={setSelected}
+      setValue={newValue => setSelected(newValue ?? null)}
       disabled={isSubmitting}
       {...autoCompleteProps}
     />
