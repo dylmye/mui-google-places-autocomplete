@@ -1,6 +1,6 @@
 {
   "name": "@dylmye/mui-google-places-autocomplete",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Google places autocomplete input for MUI library in React.",
   "homepage": "https://github.com/dylmye/mui-google-places-autocomplete",
   "contributors": [
