@@ -26,9 +26,8 @@ export interface AutocompletionRequest {
 export type PredictionOption = google.maps.places.AutocompletePrediction;
 
 export default interface GooglePlacesAutocompleteProps
-  extends Omit<
-    AutocompleteProps<PredictionOption, false, false, false>,
-    "ref"
+  extends Partial<
+    Omit<AutocompleteProps<PredictionOption, false, false, false>, "ref" | "options">
   > {
   inputValue: string;
   setInputValue: (newValue: string) => void;
